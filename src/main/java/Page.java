@@ -1,6 +1,10 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class Page {
     private WebDriver driver;
@@ -45,7 +49,8 @@ public class Page {
     }
 
     public String getErrorMessage() {
-        WebElement errorMessage = driver.findElement(By.xpath(errorMessageLocator));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(4));
+        WebElement errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(errorMessageLocator)));
         String errorMessageText = errorMessage.getText();
         return errorMessageText;
     }
