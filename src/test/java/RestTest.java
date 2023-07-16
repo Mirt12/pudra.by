@@ -5,7 +5,7 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class RestTest {
     @Test
-    public void testlLoginWithInvalidData(){
+    public void testlLoginWithInvalidData() {
         RestPageObject po = new RestPageObject();
         given().headers(po.getHeader()).formParams(po.getFormData()).
                 when().post(po.endPoint).
