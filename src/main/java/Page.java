@@ -7,6 +7,7 @@ public class Page {
     private String baseUrl = "https://pudra.by";
     private String enterBtnLocator = "//div[@class='topbar-content']/a[@href='#modalSign']";
     private String inputFieldEmailLocator = "emailSign";
+    private String inputFieldPwdLocator = "passwordSign";
 
 
     public Page(WebDriver driver) {
@@ -30,6 +31,11 @@ public class Page {
         return this;
     }
 
+    public Page fillPwdField(String password){
+        WebElement passwordFieldElement = driver.findElement(By.name(inputFieldPwdLocator));
+        passwordFieldElement.sendKeys(password);
+        return this;
+    }
 
 
 }
