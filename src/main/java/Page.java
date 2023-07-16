@@ -6,7 +6,7 @@ public class Page {
     private WebDriver driver;
     private String baseUrl = "https://pudra.by";
     private String enterBtnLocator = "//div[@class='topbar-content']/a[@href='#modalSign']";
-    private String inputFieldEmailLocator = "//input[@name='emailSign']";
+    private String inputFieldEmailLocator = "emailSign";
 
 
     public Page(WebDriver driver) {
@@ -25,7 +25,7 @@ public class Page {
     }
 
     public Page fillEmailField(String email){
-        WebElement emailFieldElement = driver.findElement(By.xpath(inputFieldEmailLocator));
+        WebElement emailFieldElement = driver.findElement(By.name(inputFieldEmailLocator));
         emailFieldElement.sendKeys(email);
         return this;
     }
