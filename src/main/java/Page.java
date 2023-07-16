@@ -7,5 +7,11 @@ public class Page {
         this.driver = driver;
     }
 
-    private String baseUrl;
+    private String baseUrl = "https://pudra.by";
+    public void getURL(){
+        driver.get(baseUrl);
+    }
+
+    private String enterBtnLocator = "//div[@class='topbar-content']/a[@href='#modalSign']";
+
 }
