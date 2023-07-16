@@ -11,7 +11,6 @@ public class Page {
     private String submitLoginFormBtnLocator = "//form[@id='formSign']//button[@type='submit']";
     private String errorMessageLocator = "//*[@id='formSign']//label[@class='error' and @style='display: block;']";
 
-
     public Page(WebDriver driver) {
         this.driver = driver;
     }
@@ -44,10 +43,10 @@ public class Page {
         submitBtn.click();
         return this;
     }
-     public String getErrorMessage(){
+
+    public String getErrorMessage() {
         WebElement errorMessage = driver.findElement(By.xpath(errorMessageLocator));
         String errorMessageText = errorMessage.getText();
         return errorMessageText;
-     }
-
+    }
 }
