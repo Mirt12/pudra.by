@@ -1,3 +1,3 @@
-public class UITests {
+public class UITests extends BaseTest{
 
 }
