@@ -8,34 +8,46 @@ public class Page {
     private String enterBtnLocator = "//div[@class='topbar-content']/a[@href='#modalSign']";
     private String inputFieldEmailLocator = "emailSign";
     private String inputFieldPwdLocator = "passwordSign";
+    private String submitLoginFormBtnLocator = "//form[@id='formSign']//button[@type='submit']";
+    private String errorMessageLocator = "//*[@id='formSign']//label[@class='error' and @style='display: block;']";
 
 
     public Page(WebDriver driver) {
         this.driver = driver;
     }
 
-    public Page getURL(){
+    public Page getURL() {
         driver.get(baseUrl);
         return this;
     }
 
-    public Page clickEnterBtn(){
+    public Page clickEnterBtn() {
         WebElement enterBtn = driver.findElement(By.xpath(enterBtnLocator));
         enterBtn.click();
         return this;
     }
 
-    public Page fillEmailField(String email){
+    public Page fillEmailField(String email) {
         WebElement emailFieldElement = driver.findElement(By.name(inputFieldEmailLocator));
         emailFieldElement.sendKeys(email);
         return this;
     }
 
-    public Page fillPwdField(String password){
+    public Page fillPwdField(String password) {
         WebElement passwordFieldElement = driver.findElement(By.name(inputFieldPwdLocator));
         passwordFieldElement.sendKeys(password);
         return this;
     }
 
+    public Page clickSubmitLoginFormBtn() {
+        WebElement submitBtn = driver.findElement(By.xpath(submitLoginFormBtnLocator));
+        submitBtn.click();
+        return this;
+    }
+     public String getErrorMessage(){
+        WebElement errorMessage = driver.findElement(By.xpath(errorMessageLocator));
+        String errorMessageText = errorMessage.getText();
+        return errorMessageText;
+     }
 
 }
