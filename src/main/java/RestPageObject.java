@@ -4,8 +4,6 @@ public class RestPageObject {
 
     String endPoint = "https://pudra.by/login";
 
-
-
     public HashMap<String, String> getHeader() {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
@@ -18,5 +16,6 @@ public class RestPageObject {
         formData.put("Client[email]", "test@test.com");
         formData.put("Client[password]", "ddddddd");
         formData.put("_csrf", "k-Tb3PXiHmu1HHSKKYZ63xSwZbfopDRyWir11Ga4qJ8L0WkcBGz4b_kPq_r6Tq_QxE0Pb11r4m605z09A-1sog==");
+        return formData;
     }
 }
