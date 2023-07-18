@@ -15,8 +15,8 @@ public class Page {
     private String submitLoginFormBtnLocator = "//form[@id='formSign']//button[@type='submit']";
     private String errorMessageLocator = "//*[@id='formSign']//label[@class='error' and @style='display: block;']";
 
-    public Page(WebDriver driver) {
-        this.driver = driver;
+    public Page() {
+        this.driver = DriverSingleton.getDriver();
     }
 
     public Page getURL() {
